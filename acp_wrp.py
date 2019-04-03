@@ -3,7 +3,7 @@
 #   author: Bita Khalili
 #*************************
 
-import acp
+import src.acp
 import statistics
 import pandas as pd
 from optparse import OptionParser
@@ -39,7 +39,7 @@ def main(input_data,outdir,numofps,dist,remNeigbPairsFlag):
     print('Data matrix loaded: '+\
               '{:d}'.format(M.shape[0])+'x'+'{:d}'.format(M.shape[1]))
 
-    (C,P) = acp.acp(M,ppm,dist,remNeigbPairsFlag) #Complete correlation matrix and the sorted indices of leading correlated features
+    (C,P) = src.acp.acp(M,ppm,dist,remNeigbPairsFlag) #Complete correlation matrix and the sorted indices of leading correlated features
 
     pseudospec_cr = pseudospectrum(M,C,P,num_samples)   #a list of pseusospecs each correspond to the respective pairs in P
 

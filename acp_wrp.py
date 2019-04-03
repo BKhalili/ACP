@@ -3,7 +3,7 @@
 #   author: Bita Khalili
 #*************************
 
-import src.acp.acp_fn as acp_fn
+import src.acp.acp_fn as acp_fn 
 import statistics
 import pandas as pd
 from optparse import OptionParser
@@ -56,7 +56,7 @@ def main(input_data,outdir,numofps,dist,remNeigbPairsFlag):
         else:
             headers_cr.append('cr/f'+'{:05}'.format(ppm[P[i-1,0]])+'f'+'{:05}'.format(ppm[P[i-1,1]]))
 
-    fileName_cr=outdir+'ps.acp.'+items.split('.csv')[0]+'.pseudospectrum.tsv' 
+    fileName_cr=outdir+'ps.acp.'+input_data.split('.csv')[0].rsplit('/',1)[1]+'.pseudospectrum.tsv' 
     output_cr=output_cr.iloc[:,0:(numofps+1)]
     output_cr.to_csv(fileName_cr,index=False,header=headers_cr[0:(numofps+1)],sep='\t')
 

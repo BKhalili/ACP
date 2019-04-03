@@ -3,7 +3,7 @@
 #   author: Bita Khalili
 #*************************
 
-import src.acp as acp_fn
+import src.acp.acp_fn as acp_fn
 import statistics
 import pandas as pd
 from optparse import OptionParser
